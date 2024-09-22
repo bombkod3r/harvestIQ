@@ -7,6 +7,9 @@ package com.example.tutorialspoint7.harvestiq
 sealed class ImageInterpretationUiState {
     object Initial : ImageInterpretationUiState()
     object Loading : ImageInterpretationUiState()
-    data class Success(val outputText: String) : ImageInterpretationUiState()
+    data class Success(val outputText: String, val bestCounty: String, val mapsLink: String) :
+        ImageInterpretationUiState()
+
     data class Error(val errorMessage: String) : ImageInterpretationUiState()
 }
+

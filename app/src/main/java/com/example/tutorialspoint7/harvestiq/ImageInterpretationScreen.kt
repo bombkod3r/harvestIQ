@@ -74,30 +74,63 @@ fun ImageInterpretationScreen(
     onReasonClicked: (String, List<Uri>) -> Unit = { _, _ -> }
 ) {
     val userQuestion = """
-    Identify the vegetable/fruit and analyze its current shelf life, ripening period, and ideal market timing post-ripening. Detail the prime harvest season and offer both the present and expected market rates in KES within the Kenyan market after sale. Further, determine the optimal Kenyan county for selling this produce, providing both the county's name and its geographical coordinates for map plotting purposes.
+Identify the vegetable/fruit and analyze its current shelf life, ripening period, and ideal market timing post-ripening. Detail the prime harvest season and offer both the present and expected market rates in KES within the Kenyan market after sale. Further, determine the optimal Kenyan county for selling this produce, providing both the county's name and its geographical coordinates for map plotting purposes.
+The output should be presented in the following format separately for each detected fruit/vegetable:
+{Fruit/Vegetable Name}
 
-    The output should be presented in the following format separately for each detected fruit/vegetable:
+1. Current maturity stage:
+{stage}
 
-    ## {Fruit/Vegetable Name}
+2. Remaining shelf life:
+{time}
 
-● **Current maturity stage:** {stage}
-● **Remaining shelf life:** {time}
-● **Optimal harvest window:** {window}
-● **Best post-harvest handling practices:** {practices}
-● **Ideal storage conditions:** {conditions}
-● **Present market rate (KES):** {current_rate}
-● **Expected market rate (KES):** {expected_rate}
-● **Best county for selling:** {best_county}
-● **Value-added processing options:** {options}
-● **Immediate vs. delayed selling strategy:** {strategy}
-● **Quality grading criteria:** {criteria}
-● **Common post-harvest diseases:** {diseases}
-● **Transportation recommendations:** {recommendations}
-● **Local vs. export market potential:** {potential}
-● **Certifications or standards:** {certifications}
-● **Nutritional peak:** {peak}
-● **Ethylene sensitivity/production:** {ethylene}
-● **Sustainable packaging options:** {packaging}
+3. Optimal harvest window:
+{window}
+
+4. Best post-harvest handling practices:
+{practices}
+
+5. Ideal storage conditions:
+{conditions}
+
+6. Present market rate (KES):
+{current_rate}
+
+7. Expected market rate (KES):
+{expected_rate}
+
+8. Best county for selling:
+{best_county}
+
+9. Value-added processing options:
+{options}
+
+10. Immediate vs. delayed selling strategy:
+{strategy}
+
+11. Quality grading criteria:
+{criteria}
+
+12. Common post-harvest diseases:
+{diseases}
+
+13. Transportation recommendations:
+{recommendations}
+
+14 Local vs. export market potential:
+{potential}
+
+15 Certifications or standards:
+{certifications}
+
+16 Nutritional peak:
+{peak}
+
+17 Ethylene sensitivity/production:
+{ethylene}
+
+● Sustainable packaging options:
+{packaging}
 """.trimIndent()
 
     val imageUris = rememberSaveable(saver = UriSaver()) { mutableStateListOf<Uri>() }
@@ -174,7 +207,8 @@ fun ImageInterpretationScreen(
                         .padding(all = 8.dp)
                         .align(Alignment.CenterHorizontally)
                 ) {
-                    CircularProgressIndicator(color = Color(0XFF02D2A8))
+                    LinearProgressIndicator(color = Color(0xFF3CB371))
+
                 }
             }
             is ImageInterpretationUiState.Success -> {
@@ -184,7 +218,7 @@ fun ImageInterpretationScreen(
                         .fillMaxWidth(),
                     shape = MaterialTheme.shapes.large,
                     colors = CardDefaults.cardColors(
-                        containerColor = Color(0XFF02D2A8)
+                        containerColor = Color(0xFF8A9A5B)
                     )
                 ) {
                     Row(
