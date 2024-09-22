@@ -21,7 +21,7 @@ val GenerativeViewModelFactory = object : ViewModelProvider.Factory {
                 isAssignableFrom(ImageInterpretationViewModel::class.java) -> {
                     val generativeModel = GenerativeModel(
                         modelName = "gemini-1.5-flash",
-                        apiKey = "AIzaSyCQxPiW2SeRykOkRQewH4Xao3Pj0J7DTlI", // your actual API key
+                        apiKey = "", // your actual API key
                         generationConfig = config
                     )
                     @Suppress("UNCHECKED_CAST") // Suppress unchecked cast warning
