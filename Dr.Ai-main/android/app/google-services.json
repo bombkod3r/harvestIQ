@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "690092838655",
+    "project_id": "dr-ai-83d51",
+    "storage_bucket": "dr-ai-83d51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690092838655:android:dbf41ec89f5d3aaf8046ca",
+        "android_client_info": {
+          "package_name": "com.example.dr_ai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTjAz--_sSHXoFfJz0Y36EhW5lddo2-Xg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
