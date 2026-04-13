@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "690092838655",
-    "project_id": "dr-ai-83d51",
-    "storage_bucket": "dr-ai-83d51.appspot.com"
+    "project_number": "861014531257",
+    "project_id": "health-nexus-5d24e",
+    "storage_bucket": "health-nexus-5d24e.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:690092838655:android:dbf41ec89f5d3aaf8046ca",
+        "mobilesdk_app_id": "1:861014531257:android:8019a540194854d96c0f68",
         "android_client_info": {
           "package_name": "com.example.dr_ai"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDTjAz--_sSHXoFfJz0Y36EhW5lddo2-Xg"
+          "current_key": "AIzaSyDH5LivR_HRPNLHRQP7cwxyWyCoeifWTzE"
         }
       ],
       "services": {

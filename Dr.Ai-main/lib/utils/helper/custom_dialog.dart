@@ -144,7 +144,7 @@ class _CustomDialogState extends State<CustomDialog> {
     );
   }
 
-  dialogContent(BuildContext context) {
+  BlocConsumer<AccountCubit, AccountState> dialogContent(BuildContext context) {
     return BlocConsumer<AccountCubit, AccountState>(
       listener: (context, state) {
         if (state is AccountLogoutLoading) {

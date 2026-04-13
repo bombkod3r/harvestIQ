@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:dr_ai/utils/constant/api_url.dart';
 import 'dart:developer';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:uuid/uuid.dart';
 
 import '../../model/find_hospital_place_info.dart';
 

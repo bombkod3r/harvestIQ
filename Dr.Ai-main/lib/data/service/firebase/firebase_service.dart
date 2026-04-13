@@ -151,7 +151,7 @@ class FirebaseService {
         return;
       }
 
-      await user.updateEmail(newEmail);
+      // await user.updateEmail(newEmail);
       log("Email address updated successfully");
     } catch (error) {
       log("Error updating email: $error");
@@ -169,7 +169,7 @@ class FirebaseService {
             email: user.email!, password: password);
         await user.reauthenticateWithCredential(credential);
 
-        await user.updateEmail(newEmail);
+        // await user.updateEmail(newEmail);
         log("Email updated successfully to $newEmail");
       } else {
         log("User not signed in.");

@@ -92,7 +92,6 @@ class CustomDropDownFieldState extends State<CustomDropDownField> {
             errorBorder: context.inputDecoration.errorBorder,
             focusedErrorBorder: context.inputDecoration.focusedErrorBorder,
           ),
-          value: selectedUser,
           onChanged: (Item? value) {
             setState(() {
               selectedUser = value;
@@ -100,15 +99,11 @@ class CustomDropDownFieldState extends State<CustomDropDownField> {
           },
           onSaved: widget.onSaved,
           items: widget.items.map((Item user) {
-            return DropdownMenuItem<Item>(
+            return DropdownItem<Item>(
               value: user,
               child: Row(
                 children: [
-                  (user.icon != null)
-                      ? Icon(user.icon)
-                      : SizedBox(
-                          width: 5.w,
-                        ),
+                  if (user.icon != null) Icon(user.icon),
                   if (user.icon != null) SizedBox(width: 10.w),
                   Text(
                     user.name,

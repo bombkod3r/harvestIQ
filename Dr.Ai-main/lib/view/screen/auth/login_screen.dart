@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
   String? _email;
   String? _password;
   bool _isLoading = false;
-  login() {
+  void login() {
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
       context

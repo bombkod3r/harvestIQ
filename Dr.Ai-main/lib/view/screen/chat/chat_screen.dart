@@ -18,16 +18,14 @@ import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class ChatScreen extends StatefulWidget {
-  const ChatScreen({Key? key}) : super(key: key);
+  const ChatScreen({super.key});
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  bool _speechEnabled = false;
   String _lastWords = '';
-  bool _isSenderLoading = false;
   bool _isReceiverLoading = false;
   bool _isChatDeletingLoading = false;
   bool _isButtonVisible = false;
@@ -70,7 +68,7 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Future<void> _initSpeech() async {
-    _speechEnabled = await _speechToText.initialize();
+    await _speechToText.initialize();
     setState(() {});
   }
 
@@ -142,12 +140,10 @@ class _ChatScreenState extends State<ChatScreen> {
       listener: (context, state) {
         if (state is ChatSenderLoading) {
           setState(() {
-            _isSenderLoading = true;
             _txtController.clear();
           });
         }
         if (state is ChatSendSuccess) {
-          _isSenderLoading = false;
         }
         if (state is ChatReceiverLoading) {
           _isReceiverLoading = true;
@@ -158,7 +154,6 @@ class _ChatScreenState extends State<ChatScreen> {
           _scrollToEnd();
         }
         if (state is ChatFailure) {
-          _isSenderLoading = false;
           _isReceiverLoading = false;
           alertMessage(context);
         }

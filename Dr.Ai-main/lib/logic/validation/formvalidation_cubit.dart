@@ -1,15 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' hide TextDirection;
-import 'package:intl/intl.dart ' hide TextDirection;
+import 'package:intl/intl.dart' hide TextDirection;
 
 part 'formvalidation_state.dart';
 
 class ValidationCubit extends Cubit<FormvalidationState> {
   ValidationCubit() : super(FormvalidationInitial());
-  String _email = '';
   String _password = '';
-  String _confirmPassword = '';
   TextDirection? getTextDirection(String text) {
     bool isArabic = RegExp(r'[\u0600-\u06FF]').hasMatch(text);
     return isArabic ? TextDirection.rtl : TextDirection.ltr;
@@ -78,7 +76,6 @@ class ValidationCubit extends Cubit<FormvalidationState> {
     if (value != _password) {
       return 'Passwords do not match';
     }
-    _confirmPassword = value;
 
     emit(ConfirmPasswordValidationSuccess());
     return null;
@@ -91,7 +88,6 @@ class ValidationCubit extends Cubit<FormvalidationState> {
     if (!_hasValidEmail(value)) {
       return 'Please enter a valid email address';
     }
-    _email = value;
     // if (firebaseException != null ||
     //     firebaseException != '' ||
     //     firebaseException?.isNotEmpty == true) {
@@ -108,11 +104,18 @@ class ValidationCubit extends Cubit<FormvalidationState> {
   }
 
   String? nameValidator(String? value) {
-    if (value == null || value.isEmpty) {
+    if (value == null || value.trim().isEmpty) {
       return 'Name cannot be empty';
     }
-    if (!RegExp(r"^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$")
-        .hasMatch(value)) {
+    final trimmed = value.trim();
+    if (trimmed.length < 2) {
+      return 'Name must be at least 2 characters';
+    }
+    if (trimmed.length > 100) {
+      return 'Name is too long';
+    }
+    // Allows: letters (including accented/unicode), spaces, hyphens, apostrophes, periods
+    if (!RegExp(r"^[\p{L}][\p{L}\s'\-\.]*$", unicode: true).hasMatch(trimmed)) {
       return 'Please enter a valid name';
     }
     return null;

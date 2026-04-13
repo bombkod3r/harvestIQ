@@ -69,25 +69,6 @@ class AccountCubit extends Cubit<AccountState> {
     }
   }
 
-  //! DELETE USER DATA
-  Future<void> _deleteUserData() async {
-    emit(UserDataDeletingLoading());
-    try {
-      await _firestore
-          .collection('users')
-          .doc(FirebaseAuth.instance.currentUser?.uid)
-          .get();
-      log("DELETED USER DATA");
-      await CacheData.clearData(clearData: true);
-      log("DELETED CACHE DATA");
-      emit(UserDataDeleteSuccess());
-      log("ACCOUNT DELETED SUCCESSFULLY");
-    } on FirebaseException catch (err) {
-      log("${err.message} \n ${err.stackTrace} \n ${err.code.toString()} \n ${err.plugin}");
-      emit(UserDataDeleteFailure(message: "Failed to delete user data"));
-    }
-  }
-
 //! DELETE Chat History
 
   Future<void> _deleteChatHistory() async {

@@ -32,7 +32,7 @@ class SignUpCubit extends Cubit<SignUpState> {
       );
       emit(CreatePasswordSuccess());
     } on FirebaseAuthException catch (err) {
-      emit(CreateProfileFailure(errorMessage: err.message ?? err.code));
+      emit(CreatePasswordFailure(errorMessage: err.message ?? err.code));
     }
   }
 

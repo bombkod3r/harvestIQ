@@ -24,7 +24,8 @@ class SocialLoginCard extends StatelessWidget {
         OutlinedButton(
           style: style,
           child: _buildSVGIcon(ImageManager.googleIcon),
-          onPressed: () => context.bloc<SocialAuthCubit>().signInWithGoogle(),
+          onPressed: () {},
+          // onPressed: () => context.bloc<SocialAuthCubit>().signInWithGoogle(),
         ),
         OutlinedButton(
           style: style,

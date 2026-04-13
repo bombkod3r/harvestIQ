@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
@@ -11,21 +10,21 @@ class SocialAuthCubit extends Cubit<SocialAuthState> {
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
-  void signInWithGoogle() async {
-    try {
-      final googleUser = await GoogleSignIn().signIn();
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser!.authentication;
-      final AuthCredential credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
-      );
-      await _firebaseAuth.signInWithCredential(credential);
-      emit(SocialAuthState.authenticated);
-    } catch (e) {
-      emit(SocialAuthState.unauthenticated);
-    }
-  }
+  // void signInWithGoogle() async {
+  //   try {
+  //     final googleUser = await _googleSignIn.signIn();
+  //     final GoogleSignInAuthentication googleAuth =
+  //         await googleUser!.authentication;
+  //     final AuthCredential credential = GoogleAuthProvider.credential(
+  //       accessToken: googleAuth.accessToken,
+  //       idToken: googleAuth.idToken,
+  //     );
+  //     await _firebaseAuth.signInWithCredential(credential);
+  //     emit(SocialAuthState.authenticated);
+  //   } catch (e) {
+  //     emit(SocialAuthState.unauthenticated);
+  //   }
+  // }
 
   void signInWithFacebook() async {
     try {

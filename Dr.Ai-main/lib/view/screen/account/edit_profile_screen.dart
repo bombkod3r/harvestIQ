@@ -21,14 +21,11 @@ class EditProfileScreen extends StatefulWidget {
 }
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
-  @override
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String? _name;
   String? _email;
   String? _phoneNumber;
   String? _dob;
-  String? _gender;
-  String? _bloodType;
   String? _height;
   String? _weight;
   String? _chronicDiseases;

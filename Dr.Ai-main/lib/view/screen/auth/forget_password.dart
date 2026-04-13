@@ -24,7 +24,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
   String? email;
   bool _isLoading = false;
 
-  resetPassword() {
+  void resetPassword() {
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
       BlocProvider.of<ForgetPasswordCubit>(context)

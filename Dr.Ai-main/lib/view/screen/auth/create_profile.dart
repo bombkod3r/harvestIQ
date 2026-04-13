@@ -85,28 +85,23 @@ class _CreateProfileState extends State<CreateProfile> {
               BlocConsumer<SignUpCubit, SignUpState>(
                 listener: (context, state) {
                   if (state is SignUpLoading) {
-                    _isLoading = true;
-                  }
-                  if (state is CreateProfileSuccess) {
+                    setState(() => _isLoading = true);
+                  } else if (state is CreateProfileSuccess) {
                     FocusScope.of(context).unfocus();
-                  }
-                  if (state is VerifyEmailSuccess) {
+                  } else if (state is VerifyEmailSuccess) {
                     FocusScope.of(context).unfocus();
-                    _isLoading = false;
+                    setState(() => _isLoading = false);
                     customDialogWithAnimation(context,
                         dismiss: false, screen: const LoginDialog());
-                  }
-                  if (state is CreateProfileFailure) {
+                  } else if (state is CreatePasswordFailure) {
                     customSnackBar(context, state.errorMessage);
-                    _isLoading = false;
-                  }
-                  if (state is VerifyEmailFailure) {
+                    setState(() => _isLoading = false);
+                  } else if (state is CreateProfileFailure) {
                     customSnackBar(context, state.errorMessage);
-                    _isLoading = false;
-                  }
-                  if (state is CreateProfileFailure) {
+                    setState(() => _isLoading = false);
+                  } else if (state is VerifyEmailFailure) {
                     customSnackBar(context, state.errorMessage);
-                    _isLoading = false;
+                    setState(() => _isLoading = false);
                   }
                 },
                 builder: (context, state) {
@@ -124,6 +119,8 @@ class _CreateProfileState extends State<CreateProfile> {
                           email: widget.userCredential[0]!,
                           password: widget.userCredential[1]!,
                         );
+                        // Stop if account creation failed
+                        if (cubit.state is CreatePasswordFailure) return;
                         await cubit.createProfile(
                           name: _name!,
                           phoneNumber: _phoneNumber!,
@@ -136,6 +133,8 @@ class _CreateProfileState extends State<CreateProfile> {
                           familyHistoryOfChronicDiseases:
                               _familyHistoryOfChronicDiseases!,
                         );
+                        // Stop if profile creation failed
+                        if (cubit.state is CreateProfileFailure) return;
                         await cubit.verifyEmail();
                       }
                     },

@@ -36,8 +36,7 @@ class PlaceDirectionsModel {
 
     return PlaceDirectionsModel(
       bounds: bounds,
-      polylinePoints: PolylinePoints()
-          .decodePolyline(data['overview_polyline']['points'] as String),
+      polylinePoints: PolylinePoints.decodePolyline(data['overview_polyline']['points'] as String),
       totalDistance: distance,
       totalDuration: duration,
     );

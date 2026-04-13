@@ -41,48 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBxwHEE8JJMhC6ppf6uk6V2-jD5Vq9kBcI',
-    appId: '1:690092838655:web:342c0c9e0542efc48046ca',
-    messagingSenderId: '690092838655',
-    projectId: 'dr-ai-83d51',
-    authDomain: 'dr-ai-83d51.firebaseapp.com',
-    storageBucket: 'dr-ai-83d51.appspot.com',
-    measurementId: 'G-4YKCTP1E6W',
+    apiKey: 'AIzaSyC6ybtqz-OnU9cAN-uDlv08kC_SQuKS0MY',
+    appId: '1:861014531257:web:e63b9a0dfcabca816c0f68',
+    messagingSenderId: '861014531257',
+    projectId: 'health-nexus-5d24e',
+    authDomain: 'health-nexus-5d24e.firebaseapp.com',
+    storageBucket: 'health-nexus-5d24e.firebasestorage.app',
+    measurementId: 'G-VD344B22VT',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDTjAz--_sSHXoFfJz0Y36EhW5lddo2-Xg',
-    appId: '1:690092838655:android:dbf41ec89f5d3aaf8046ca',
-    messagingSenderId: '690092838655',
-    projectId: 'dr-ai-83d51',
-    storageBucket: 'dr-ai-83d51.appspot.com',
+    apiKey: 'AIzaSyDH5LivR_HRPNLHRQP7cwxyWyCoeifWTzE',
+    appId: '1:861014531257:android:8019a540194854d96c0f68',
+    messagingSenderId: '861014531257',
+    projectId: 'health-nexus-5d24e',
+    storageBucket: 'health-nexus-5d24e.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC61XYBFZbWthr7DeVkjkjt2y9xaHq_IYU',
-    appId: '1:690092838655:ios:71072e24e018c8c18046ca',
-    messagingSenderId: '690092838655',
-    projectId: 'dr-ai-83d51',
-    storageBucket: 'dr-ai-83d51.appspot.com',
+    apiKey: 'AIzaSyDNGfC7eYK0F_sjn5cYWtk0tFg1RCU87VU',
+    appId: '1:861014531257:ios:e82bb6dc4a837c7c6c0f68',
+    messagingSenderId: '861014531257',
+    projectId: 'health-nexus-5d24e',
+    storageBucket: 'health-nexus-5d24e.firebasestorage.app',
     iosBundleId: 'com.example.drAi',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyC61XYBFZbWthr7DeVkjkjt2y9xaHq_IYU',
-    appId: '1:690092838655:ios:71072e24e018c8c18046ca',
-    messagingSenderId: '690092838655',
-    projectId: 'dr-ai-83d51',
-    storageBucket: 'dr-ai-83d51.appspot.com',
+    apiKey: 'AIzaSyDNGfC7eYK0F_sjn5cYWtk0tFg1RCU87VU',
+    appId: '1:861014531257:ios:e82bb6dc4a837c7c6c0f68',
+    messagingSenderId: '861014531257',
+    projectId: 'health-nexus-5d24e',
+    storageBucket: 'health-nexus-5d24e.firebasestorage.app',
     iosBundleId: 'com.example.drAi',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyBxwHEE8JJMhC6ppf6uk6V2-jD5Vq9kBcI',
-    appId: '1:690092838655:web:eb529056dafa7faf8046ca',
-    messagingSenderId: '690092838655',
-    projectId: 'dr-ai-83d51',
-    authDomain: 'dr-ai-83d51.firebaseapp.com',
-    storageBucket: 'dr-ai-83d51.appspot.com',
-    measurementId: 'G-Y4J1CV1SHZ',
+    apiKey: 'AIzaSyC6ybtqz-OnU9cAN-uDlv08kC_SQuKS0MY',
+    appId: '1:861014531257:web:258d5143ad23e1896c0f68',
+    messagingSenderId: '861014531257',
+    projectId: 'health-nexus-5d24e',
+    authDomain: 'health-nexus-5d24e.firebaseapp.com',
+    storageBucket: 'health-nexus-5d24e.firebasestorage.app',
+    measurementId: 'G-ZD2RB66RFH',
   );
+
 }

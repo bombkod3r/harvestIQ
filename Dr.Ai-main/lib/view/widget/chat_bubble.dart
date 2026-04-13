@@ -43,10 +43,10 @@ class ChatBubbleForLoading extends StatelessWidget {
 
 class ChatBubbleForDrAi extends StatefulWidget {
   const ChatBubbleForDrAi({
-    Key? key,
+    super.key,
     required this.message,
     required this.time,
-  }) : super(key: key);
+  });
 
   final String message;
   final String time;
@@ -142,9 +142,9 @@ class _ChatBubbleForDrAiState extends State<ChatBubbleForDrAi> {
 
 class ChatBubbleForGuest extends StatelessWidget {
   const ChatBubbleForGuest({
-    Key? key,
+    super.key,
     required this.message,
-  }) : super(key: key);
+  });
 
   final String message;
 
